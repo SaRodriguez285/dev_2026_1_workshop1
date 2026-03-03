@@ -73,17 +73,16 @@ class Conversion:
 
     
     def morse_a_texto(self, morse):
-        """
-        Convierte código Morse a texto.
-        
-        Args:
-            morse (str): Código Morse separado por espacios
-            
-        Returns:
-            str: Texto decodificado
-            
-        Ejemplo:
-            morse_a_texto("... --- ...") -> "SOS"
-            morse_a_texto(".... . .-.. .-.. ---") -> "HELLO"
-        """
-        pass
+        morse_dict = {
+            ".-": "A", "-...": "B", "-.-.": "C", "-..": "D",
+            ".": "E", "..-.": "F", "--.": "G", "....": "H",
+            "..": "I", ".---": "J", "-.-": "K", ".-..": "L",
+            "--": "M", "-.": "N", "---": "O", ".--.": "P",
+            "--.-": "Q", ".-.": "R", "...": "S", "-": "T",
+            "..-": "U", "...-": "V", ".--": "W", "-..-": "X",
+            "-.--": "Y", "--..": "Z"
+        }
+        resultado = ""
+        for codigo in morse:
+            resultado += morse_dict.get(codigo, "")
+        return resultado
