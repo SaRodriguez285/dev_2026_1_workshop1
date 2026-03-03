@@ -33,19 +33,21 @@ class Games:
 
     
     def ta_te_ti_ganador(self, tablero):
-        for fila in tablero:
-            if fila[0] != " " and fila[0] == fila[1] == fila[2]:
-                return fila[0]
+        lineas = []
+
+        lineas.extend(tablero)
 
         for col in range(3):
-            if tablero[0][col] != " " and tablero[0][col] == tablero[1][col] == tablero[2][col]:
-                return tablero[0][col]
+            lineas.append([tablero[0][col], tablero[1][col], tablero[2][col]])
 
-        if tablero[0][0] != " " and tablero[0][0] == tablero[1][1] == tablero[2][2]:
-            return tablero[0][0]
+        lineas.append([tablero[0][0], tablero[1][1], tablero[2][2]])
+        lineas.append([tablero[0][2], tablero[1][1], tablero[2][0]])
 
-        if tablero[0][2] != " " and tablero[0][2] == tablero[1][1] == tablero[2][0]:
-            return tablero[0][2]
+        for linea in lineas:
+            if linea == ["X", "X", "X"]:
+                return "X"
+            if linea == ["O", "O", "O"]:
+                return "O"
 
         for fila in tablero:
             if " " in fila:
@@ -54,7 +56,6 @@ class Games:
         return "empate"
 
 
-    
     def generar_combinacion_mastermind(self, longitud, colores_disponibles):
         """
         Genera una combinación aleatoria para el juego Mastermind.
