@@ -20,9 +20,14 @@ class Data:
 
     def eliminar_duplicados(self, lista):
         resultado = []
-        for elemento in lista:
-            if elemento not in resultado:
-                resultado.append(elemento)
+        for i in range(len(lista)):
+            duplicado = False
+            for j in range(len(resultado)):
+                if lista[i] == resultado[j]:
+                    duplicado = True
+                    break
+            if not duplicado:
+                resultado.append(lista[i])
         return resultado
 
 
