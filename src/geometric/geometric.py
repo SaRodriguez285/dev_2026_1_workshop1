@@ -19,99 +19,38 @@ class Geometria:
 
     
     def area_triangulo(self, base, altura):
-        """
-        Calcula el área de un triángulo.
-        
-        Args:
-            base (float): Longitud de la base del triángulo
-            altura (float): Altura del triángulo
-            
-        Returns:
-            float: Área del triángulo
-        """
-        pass
-    
+        if base <= 0 or altura <= 0:
+            return 0
+        return (base * altura) / 2
+
     def perimetro_triangulo(self, lado1, lado2, lado3):
-        """
-        Calcula el perímetro de un triángulo.
-        
-        Args:
-            lado1 (float): Longitud del primer lado
-            lado2 (float): Longitud del segundo lado
-            lado3 (float): Longitud del tercer lado
-            
-        Returns:
-            float: Perímetro del triángulo
-        """
-        pass
-    
+        return lado1 + lado2 + lado3
+
     def es_triangulo_valido(self, lado1, lado2, lado3):
-        """
-        Verifica si tres longitudes pueden formar un triángulo válido.
-        Un triángulo es válido si la suma de las longitudes de dos lados
-        es mayor que la longitud del tercer lado, para todos los lados.
-        
-        Args:
-            lado1 (float): Longitud del primer lado
-            lado2 (float): Longitud del segundo lado
-            lado3 (float): Longitud del tercer lado
-            
-        Returns:
-            bool: True si los lados pueden formar un triángulo, False en caso contrario
-        """
-        pass
-    
+        if lado1 <= 0 or lado2 <= 0 or lado3 <= 0:
+            return False
+        return (lado1 + lado2 > lado3 and
+                lado1 + lado3 > lado2 and
+                lado2 + lado3 > lado1)
+
     def area_trapecio(self, base_mayor, base_menor, altura):
-        """
-        Calcula el área de un trapecio.
-        
-        Args:
-            base_mayor (float): Longitud de la base mayor
-            base_menor (float): Longitud de la base menor
-            altura (float): Altura del trapecio
-            
-        Returns:
-            float: Área del trapecio
-        """
-        pass
-    
+        if altura <= 0:
+            return 0
+        return ((base_mayor + base_menor) * altura) / 2
+
     def area_rombo(self, diagonal_mayor, diagonal_menor):
-        """
-        Calcula el área de un rombo usando sus diagonales.
-        
-        Args:
-            diagonal_mayor (float): Longitud de la diagonal mayor
-            diagonal_menor (float): Longitud de la diagonal menor
-            
-        Returns:
-            float: Área del rombo
-        """
-        pass
-    
+        if diagonal_mayor <= 0 or diagonal_menor <= 0:
+            return 0
+        return (diagonal_mayor * diagonal_menor) / 2
+
     def area_pentagono_regular(self, lado, apotema):
-        """
-        Calcula el área de un pentágono regular.
-        
-        Args:
-            lado (float): Longitud del lado del pentágono
-            apotema (float): Longitud de la apotema (distancia del centro al punto medio de un lado)
-            
-        Returns:
-            float: Área del pentágono regular
-        """
-        pass
-    
+        if apotema <= 0:
+            return 0
+        return (5 * lado * apotema) / 2
+
     def perimetro_pentagono_regular(self, lado):
-        """
-        Calcula el perímetro de un pentágono regular.
-        
-        Args:
-            lado (float): Longitud del lado del pentágono
-            
-        Returns:
-            float: Perímetro del pentágono regular
-        """
-        pass
+        return 5 * lado
+
     
     def area_hexagono_regular(self, lado, apotema):
         """
