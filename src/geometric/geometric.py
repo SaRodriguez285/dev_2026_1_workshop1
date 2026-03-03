@@ -112,22 +112,25 @@ class Geometria:
     
 
     def pendiente_recta(self, x1, y1, x2, y2):
-        if x2 - x1 == 0:
-            return None
+        if x1 == x2:
+            raise ValueError("La recta es vertical y no tiene pendiente definida")
         return (y2 - y1) / (x2 - x1)
-    
+
 
     def ecuacion_recta(self, x1, y1, x2, y2):
-        A = y2 - y1
-        B = x1 - x2
-        C = x2 * y1 - x1 * y2
+        if x1 == x2 and y1 == y2:
+            raise ValueError("Los puntos no pueden ser iguales")
+        A = y1 - y2
+        B = x2 - x1
+        C = x1 * y2 - x2 * y1
         return (A, B, C)
-    
+
 
     def area_poligono_regular(self, num_lados, lado, apotema):
-        if num_lados <= 0 or lado <= 0 or apotema <= 0:
-            return 0
+        if num_lados < 3 or lado <= 0 or apotema <= 0:
+            raise ValueError("Valores inválidos para polígono regular")
         return (num_lados * lado * apotema) / 2
+
     
 
     def perimetro_poligono_regular(self, num_lados, lado):
