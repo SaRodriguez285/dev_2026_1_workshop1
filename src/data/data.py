@@ -4,17 +4,12 @@ class Data:
     Incluye implementaciones y algoritmos para arreglos, listas y otras estructuras.
     """
     
-    def invertir_lista(self, lista):
-        """
-        Invierte el orden de los elementos en una lista sin usar reversed() o lista[::-1].
-        
-        Args:
-            lista (list): Lista a invertir
-            
-        Returns:
-            list: Lista con los elementos en orden inverso
-        """
-        pass
+        def invertir_lista(self, lista):
+        resultado = []
+        for i in range(len(lista) - 1, -1):
+            resultado.append(lista[i])
+        return resultado
+
     
     def buscar_elemento(self, lista, elemento):
         """
