@@ -23,12 +23,14 @@ class Games:
 
     
     def ta_te_ti_ganador(self, tablero):
-        # Verificar filas
         for fila in tablero:
             if fila[0] == fila[1] == fila[2] != " ":
                 return fila[0]
+    # Verificar columnas
+        for col in range(3):
+            if tablero[0][col] == tablero[1][col] == tablero[2][col] != " ":
+                return tablero[0][col]
         
-        return "empate"
 
     
     def generar_combinacion_mastermind(self, longitud, colores_disponibles):
