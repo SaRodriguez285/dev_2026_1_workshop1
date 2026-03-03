@@ -64,14 +64,15 @@ class Conversion:
             "M": "--", "N": "-.", "O": "---", "P": ".--.",
             "Q": "--.-", "R": ".-.", "S": "...", "T": "-",
             "U": "..-", "V": "...-", "W": ".--", "X": "-..-",
-            "Y": "-.--", "Z": "--.."
+            "Y": "-.--", "Z": "--..",
+            "0": "-----", "1": ".----", "2": "..---",
+            "3": "...--", "4": "....-", "5": ".....",
+            "6": "-....", "7": "--...", "8": "---..",
+            "9": "----."
         }
-        resultado = []
-        for letra in texto:
-            resultado.append(morse.get(letra.upper(), ""))
-        return "".join(resultado)
+        return " ".join(morse[letra.upper()] for letra in texto if letra.upper() in morse)
 
-    
+
     def morse_a_texto(self, morse):
         morse_dict = {
             ".-": "A", "-...": "B", "-.-.": "C", "-..": "D",
@@ -80,9 +81,10 @@ class Conversion:
             "--": "M", "-.": "N", "---": "O", ".--.": "P",
             "--.-": "Q", ".-.": "R", "...": "S", "-": "T",
             "..-": "U", "...-": "V", ".--": "W", "-..-": "X",
-            "-.--": "Y", "--..": "Z"
+            "-.--": "Y", "--..": "Z",
+            "-----": "0", ".----": "1", "..---": "2",
+            "...--": "3", "....-": "4", ".....": "5",
+            "-....": "6", "--...": "7", "---..": "8",
+            "----.": "9"
         }
-        resultado = ""
-        for codigo in morse:
-            resultado += morse_dict.get(codigo, "")
-        return resultado
+        return "".join(morse_dict[codigo] for codigo in morse.split() if codigo in morse_dict)
