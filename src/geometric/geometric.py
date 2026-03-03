@@ -23,8 +23,10 @@ class Geometria:
             return 0
         return (base * altura) / 2
 
+
     def perimetro_triangulo(self, lado1, lado2, lado3):
         return lado1 + lado2 + lado3
+
 
     def es_triangulo_valido(self, lado1, lado2, lado3):
         if lado1 <= 0 or lado2 <= 0 or lado3 <= 0:
@@ -38,118 +40,68 @@ class Geometria:
             return 0
         return ((base_mayor + base_menor) * altura) / 2
 
+
     def area_rombo(self, diagonal_mayor, diagonal_menor):
         if diagonal_mayor <= 0 or diagonal_menor <= 0:
             return 0
         return (diagonal_mayor * diagonal_menor) / 2
+
 
     def area_pentagono_regular(self, lado, apotema):
         if apotema <= 0:
             return 0
         return (5 * lado * apotema) / 2
 
+
     def perimetro_pentagono_regular(self, lado):
         return 5 * lado
 
-    
+
     def area_hexagono_regular(self, lado, apotema):
-        """
-        Calcula el área de un hexágono regular.
-        
-        Args:
-            lado (float): Longitud del lado del hexágono
-            apotema (float): Longitud de la apotema (distancia del centro al punto medio de un lado)
-            
-        Returns:
-            float: Área del hexágono regular
-        """
-        pass
-    
+        if apotema <= 0:
+            return 0
+        return (6 * lado * apotema) / 2
+
+
     def perimetro_hexagono_regular(self, lado):
-        """
-        Calcula el perímetro de un hexágono regular.
-        
-        Args:
-            lado (float): Longitud del lado del hexágono
-            
-        Returns:
-            float: Perímetro del hexágono regular
-        """
-        pass
-    
+        return 6 * lado
+
+
     def volumen_cubo(self, lado):
-        """
-        Calcula el volumen de un cubo.
-        
-        Args:
-            lado (float): Longitud del lado del cubo
-            
-        Returns:
-            float: Volumen del cubo
-        """
-        pass
-    
+        if lado <= 0:
+            return 0
+        return lado ** 3
+
+
     def area_superficie_cubo(self, lado):
-        """
-        Calcula el área de la superficie de un cubo.
-        
-        Args:
-            lado (float): Longitud del lado del cubo
-            
-        Returns:
-            float: Área de la superficie del cubo
-        """
-        pass
-    
+        if lado <= 0:
+            return 0
+        return 6 * lado ** 2
+
+
     def volumen_esfera(self, radio):
-        """
-        Calcula el volumen de una esfera.
-        
-        Args:
-            radio (float): Radio de la esfera
-            
-        Returns:
-            float: Volumen de la esfera
-        """
-        pass
-    
+        if radio <= 0:
+            return 0
+        return (4/3) * math.pi * radio ** 3
+
+
     def area_superficie_esfera(self, radio):
-        """
-        Calcula el área de la superficie de una esfera.
-        
-        Args:
-            radio (float): Radio de la esfera
-            
-        Returns:
-            float: Área de la superficie de la esfera
-        """
-        pass
-    
+        if radio <= 0:
+            return 0
+        return 4 * math.pi * radio ** 2
+
+
     def volumen_cilindro(self, radio, altura):
-        """
-        Calcula el volumen de un cilindro.
-        
-        Args:
-            radio (float): Radio de la base del cilindro
-            altura (float): Altura del cilindro
-            
-        Returns:
-            float: Volumen del cilindro
-        """
-        pass
-    
+        if radio <= 0 or altura <= 0:
+            return 0
+        return math.pi * radio ** 2 * altura
+
+
     def area_superficie_cilindro(self, radio, altura):
-        """
-        Calcula el área de la superficie de un cilindro.
-        
-        Args:
-            radio (float): Radio de la base del cilindro
-            altura (float): Altura del cilindro
-            
-        Returns:
-            float: Área de la superficie del cilindro
-        """
-        pass
+        if radio <= 0:
+            return 0
+        return 2 * math.pi * radio * (radio + altura)
+    
     
     def distancia_entre_puntos(self, x1, y1, x2, y2):
         """
