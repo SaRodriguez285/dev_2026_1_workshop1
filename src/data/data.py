@@ -4,7 +4,7 @@ class Data:
     Incluye implementaciones y algoritmos para arreglos, listas y otras estructuras.
     """
     
-        def invertir_lista(self, lista):
+    def invertir_lista(self, lista):
         resultado = []
         for i in range(len(lista) - 1, -1):
             resultado.append(lista[i])
