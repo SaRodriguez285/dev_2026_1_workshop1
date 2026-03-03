@@ -6,7 +6,7 @@ class Data:
     
     def invertir_lista(self, lista):
         resultado = []
-        for i in range(len(lista) - 1, -1):
+        for i in range(len(lista) - 1, -1, -1):
             resultado.append(lista[i])
         return resultado
 
