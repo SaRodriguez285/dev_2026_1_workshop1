@@ -1,16 +1,26 @@
 class Games:
     def piedra_papel_tijera(self, jugador1, jugador2):
+        jugador1 = jugador1.strip().lower()
+        jugador2 = jugador2.strip().lower()
+
+        opciones = {"piedra", "papel", "tijera"}
+
+        if jugador1 not in opciones or jugador2 not in opciones:
+            return "invalid"
+
         if jugador1 == jugador2:
             return "empate"
-        
-        if (
-            (jugador1 == "piedra" and jugador2 == "tijera") or
-            (jugador1 == "tijera" and jugador2 == "papel") or
-            (jugador1 == "papel" and jugador2 == "piedra")
-        ):
+
+        reglas = {
+            "piedra": "tijera",
+            "tijera": "papel",
+            "papel": "piedra"
+        }
+
+        if reglas[jugador1] == jugador2:
             return "jugador1"
-        
-        return "jugador2"
+        else:
+            return "jugador2"
 
     
     def adivinar_numero_pista(self, numero_secreto, intento):
