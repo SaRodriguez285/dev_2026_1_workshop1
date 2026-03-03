@@ -58,10 +58,14 @@ class Games:
 
     import random
     def generar_combinacion_mastermind(self, longitud, colores_disponibles):
-        if longitud <= 0:
+        if longitud <= 0 or not colores_disponibles:
             return []
 
-        return [random.choice(colores_disponibles) for _ in range(longitud)]
+        combinacion = []
+        for _ in range(longitud):
+            combinacion.append(random.choice(colores_disponibles))
+
+        return combinacion
 
     
     def validar_movimiento_torre_ajedrez(self, desde_fila, desde_col, hasta_fila, hasta_col, tablero):
