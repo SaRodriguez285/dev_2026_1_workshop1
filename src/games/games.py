@@ -23,21 +23,13 @@ class Games:
 
     
     def ta_te_ti_ganador(self, tablero):
-        """
-        Verifica si hay un ganador en un tablero de tic-tac-toe.
+        # Verificar filas
+        for fila in tablero:
+            if fila[0] == fila[1] == fila[2] != " ":
+                return fila[0]
         
-        Args:
-            tablero (list): Matriz 3x3 con valores "X", "O" o " " (espacio vacío)
-            
-        Returns:
-            str: "X", "O", "empate" o "continua"
-            
-        Ejemplo:
-            [["X", "X", "X"],
-             ["O", "O", " "],
-             [" ", " ", " "]] -> "X"
-        """
-        pass
+        return "empate"
+
     
     def generar_combinacion_mastermind(self, longitud, colores_disponibles):
         """
