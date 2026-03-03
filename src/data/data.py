@@ -19,16 +19,16 @@ class Data:
 
 
     def eliminar_duplicados(self, lista):
-        resultado = []
-        for i in range(len(lista)):
-            duplicado = False
-            for j in range(len(resultado)):
-                if lista[i] == resultado[j]:
-                    duplicado = True
-                    break
-            if not duplicado:
-                resultado.append(lista[i])
-        return resultado
+        i = 0
+        while i < len(lista):
+            j = i + 1
+            while j < len(lista):
+                if lista[i] == lista[j]:
+                    lista.pop(j)
+                else:
+                    j += 1
+            i += 1
+        return lista
 
 
     def merge_ordenado(self, lista1, lista2):
