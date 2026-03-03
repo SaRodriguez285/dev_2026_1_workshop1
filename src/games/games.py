@@ -57,9 +57,8 @@ class Games:
 
 
     import random
-
     def generar_combinacion_mastermind(self, longitud, colores_disponibles):
-        if longitud <= 0 or not colores_disponibles:
+        if longitud <= 0:
             return []
 
         return [random.choice(colores_disponibles) for _ in range(longitud)]
