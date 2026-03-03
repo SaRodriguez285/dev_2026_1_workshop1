@@ -4,7 +4,7 @@ class Geometria:
     Class with geometric exercises.
     Include basic and funny operations in 2D and 3D.
     """
-        def area_rectangulo(self, base, altura):
+    def area_rectangulo(self, base, altura):
         if base < 0 or altura < 0:
             return 0
         return base * altura
