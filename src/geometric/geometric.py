@@ -125,7 +125,7 @@ class Geometria:
 
 
     def area_poligono_regular(self, num_lados, lado, apotema):
-        return (num_lados * lado * apotema) / 2
+        return round((num_lados * lado * apotema) / 2, 2)
 
 
     def perimetro_poligono_regular(self, num_lados, lado):
