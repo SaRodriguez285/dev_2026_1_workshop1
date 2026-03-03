@@ -66,14 +66,18 @@ class Data:
         return resultado
 
     
-    def encuentra_numero_faltante(self, lista):
-        n = len(lista)
-        suma_real = sum(lista)
-        return suma_esperada - suma_real
+def encuentra_numero_faltante(self, lista):
+    n = len(lista) + 1
+    suma_esperada = n * (n + 1) // 2
+    suma_real = sum(lista)
+    return suma_esperada - suma_real
 
-    def es_subconjunto(self, conjunto1, conjunto2):
-        for elemento in conjunto1:
-        return False
+def es_subconjunto(self, conjunto1, conjunto2):
+    for elemento in conjunto1:
+        if elemento not in conjunto2:
+            return False
+    return True
+
 
     
     def implementar_pila(self):
