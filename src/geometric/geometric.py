@@ -1,19 +1,21 @@
+import math
 class Geometria:
     """
     Class with geometric exercises.
     Include basic and funny operations in 2D and 3D.
     """
-    
-    import math
+        def area_rectangulo(self, base, altura):
+        if base < 0 or altura < 0:
+            return 0
+        return base * altura
 
     def perimetro_rectangulo(self, base, altura):
         return 2 * (base + altura)
 
     def area_circulo(self, radio):
-        return math.pi * (radio ** 2)
-
-    def perimetro_circulo(self, radio):
-        return 2 * math.pi * radio
+        if radio <= 0:
+            return 0
+        return math.pi * radio ** 2
 
     
     def area_triangulo(self, base, altura):
