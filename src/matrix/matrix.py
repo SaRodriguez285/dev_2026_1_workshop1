@@ -64,23 +64,15 @@ class Matrix:
 
 
     def determinante_3x3(self, matriz):
-        """
-        Calcula el determinante de una matriz 3x3 usando la regla de Sarrus.
+        if len(matriz) != 3 or len(matriz[0]) != 3:
+            raise ValueError("La matriz debe ser 3x3")
+        
+        a, b, c = matriz[0]
+        d, e, f = matriz[1]
+        g, h, i = matriz[2]
 
-        Args:
-            matriz (list): Matriz 3x3 (lista de listas)
+        return a*e*i + b*f*g + c*d*h - (c*e*g + b*d*i + a*f*h)
 
-        Returns:
-            number: El determinante de la matriz
-
-        Raises:
-            ValueError: Si la matriz no es 3x3
-
-        Ejemplo:
-            determinante_3x3([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> 0
-            determinante_3x3([[1, 0, 0], [0, 2, 0], [0, 0, 3]]) -> 6
-        """
-        pass
 
     def identidad(self, n):
         """
