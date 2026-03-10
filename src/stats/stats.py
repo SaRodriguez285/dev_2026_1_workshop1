@@ -1,4 +1,6 @@
 class Stats:
+    
+    
     def promedio(self, numeros):
         if len(numeros) == 0:
             raise ValueError("La lista no puede estar vacía")
@@ -39,21 +41,9 @@ class Stats:
 
     
     def desviacion_estandar(self, numeros):
-        """
-        Calcula la desviación estándar de una lista de números.
-        Usa la fórmula de desviación estándar poblacional.
-        
-        Args:
-            numeros (list): Lista de números
+        return math.sqrt(self.varianza(numeros))
+
             
-        Returns:
-            float: La desviación estándar
-            
-        Ejemplo:
-            desviacion_estandar([1, 2, 3, 4, 5]) -> 1.41...
-        """
-        pass
-    
     def varianza(self, numeros):
         if len(numeros) == 0:
             raise ValueError("La lista no puede estar vacía")
