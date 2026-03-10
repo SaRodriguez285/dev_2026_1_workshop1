@@ -27,17 +27,15 @@ class Stats:
             return 0
 
         frecuencias = {}
-        max_freq = 0
-        resultado = numeros[0]
 
         for num in numeros:
             frecuencias[num] = frecuencias.get(num, 0) + 1
 
-            if frecuencias[num] > max_freq:
-                max_freq = frecuencias[num]
-                resultado = num
+        max_freq = max(frecuencias.values())
 
-        return resultado
+        for num in numeros:
+            if frecuencias[num] == max_freq:
+                return num
 
 
     def varianza(self, numeros):
