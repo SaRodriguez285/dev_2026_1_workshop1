@@ -102,19 +102,11 @@ class Matrix:
 
 
     def buscar_en_matriz(self, matriz, valor):
-        """
-        Busca un valor en la matriz y retorna todas las posiciones donde se encuentra.
-
-        Args:
-            matriz (list): Matriz (lista de listas)
-            valor: Valor a buscar en la matriz
-
-        Returns:
-            list: Lista de tuplas (fila, columna) con las posiciones del valor.
-                  Retorna lista vacía si no se encuentra.
-
-        Ejemplo:
-            buscar_en_matriz([[1, 2, 3], [4, 2, 6], [7, 8, 2]], 2) -> [(0, 1), (1, 1), (2, 2)]
-            buscar_en_matriz([[1, 2], [3, 4]], 9) -> []
-        """
-        pass
+        posiciones = []
+        
+        for i in range(len(matriz)):
+            for j in range(len(matriz[0])):
+                if matriz[i][j] == valor:
+                    posiciones.append((i, j))
+        
+        return posiciones
