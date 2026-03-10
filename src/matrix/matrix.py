@@ -50,23 +50,11 @@ class Matrix:
 
 
     def traza(self, matriz):
-        """
-        Calcula la traza de una matriz cuadrada (suma de los elementos de la diagonal principal).
+        if not self.es_cuadrada(matriz):
+            raise ValueError("La matriz debe ser cuadrada")
+        
+        return sum(matriz[i][i] for i in range(len(matriz)))
 
-        Args:
-            matriz (list): Matriz cuadrada (lista de listas)
-
-        Returns:
-            number: La suma de los elementos de la diagonal principal
-
-        Raises:
-            ValueError: Si la matriz no es cuadrada
-
-        Ejemplo:
-            traza([[1, 2], [3, 4]]) -> 5
-            traza([[1, 0, 0], [0, 5, 0], [0, 0, 9]]) -> 15
-        """
-        pass
 
     def determinante_2x2(self, matriz):
         """
