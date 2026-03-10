@@ -55,16 +55,7 @@ class Stats:
 
     
     def rango(self, numeros):
-        """
-        Calcula el rango (diferencia entre el valor máximo y mínimo).
+        if len(numeros) == 0:
+            raise ValueError("La lista no puede estar vacía")
         
-        Args:
-            numeros (list): Lista de números
-            
-        Returns:
-            number: La diferencia entre max y min
-            
-        Ejemplo:
-            rango([1, 5, 3, 9, 2]) -> 8
-        """
-        pass
+        return max(numeros) - min(numeros)
