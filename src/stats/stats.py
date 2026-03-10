@@ -55,20 +55,14 @@ class Stats:
         pass
     
     def varianza(self, numeros):
-        """
-        Calcula la varianza de una lista de números.
-        La varianza es el cuadrado de la desviación estándar.
-        
-        Args:
-            numeros (list): Lista de números
-            
-        Returns:
-            float: La varianza
-            
-        Ejemplo:
-            varianza([1, 2, 3, 4, 5]) -> 2.0
-        """
-        pass
+        if len(numeros) == 0:
+            raise ValueError("La lista no puede estar vacía")
+
+        media = self.promedio(numeros)
+        suma = sum((x - media) ** 2 for x in numeros)
+
+        return suma / len(numeros)
+
     
     def rango(self, numeros):
         """
