@@ -57,24 +57,11 @@ class Matrix:
 
 
     def determinante_2x2(self, matriz):
-        """
-        Calcula el determinante de una matriz 2x2.
-        det([[a, b], [c, d]]) = a*d - b*c
+        if len(matriz) != 2 or len(matriz[0]) != 2:
+            raise ValueError("La matriz debe ser 2x2")
+        
+        return matriz[0][0] * matriz[1][1] - matriz[0][1] * matriz[1][0]
 
-        Args:
-            matriz (list): Matriz 2x2 (lista de listas)
-
-        Returns:
-            number: El determinante de la matriz
-
-        Raises:
-            ValueError: Si la matriz no es 2x2
-
-        Ejemplo:
-            determinante_2x2([[3, 8], [4, 6]]) -> -14
-            determinante_2x2([[1, 2], [3, 4]]) -> -2
-        """
-        pass
 
     def determinante_3x3(self, matriz):
         """
