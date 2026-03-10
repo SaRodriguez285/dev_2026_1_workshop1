@@ -14,24 +14,21 @@ class Matrix:
 
 
     def multiplicar_matrices(self, A, B):
-        """
-        Multiplica dos matrices usando la multiplicación matricial estándar.
-        El número de columnas de A debe ser igual al número de filas de B.
+        if len(A[0]) != len(B):
+            raise ValueError("Dimensiones incompatibles para multiplicación")
 
-        Args:
-            A (list): Primera matriz de dimensiones m x n
-            B (list): Segunda matriz de dimensiones n x p
+        resultado = []
+        for i in range(len(A)):
+            fila = []
+            for j in range(len(B[0])):
+                suma = 0
+                for k in range(len(B)):
+                    suma += A[i][k] * B[k][j]
+                fila.append(suma)
+            resultado.append(fila)
+        
+        return resultado
 
-        Returns:
-            list: Matriz resultante de dimensiones m x p
-
-        Raises:
-            ValueError: Si las dimensiones son incompatibles para multiplicación
-
-        Ejemplo:
-            multiplicar_matrices([[1, 2], [3, 4]], [[5, 6], [7, 8]]) -> [[19, 22], [43, 50]]
-        """
-        pass
 
     def multiplicar_escalar(self, matriz, escalar):
         """
