@@ -98,20 +98,8 @@ class Matrix:
 
 
     def rotar_90(self, matriz):
-        """
-        Rota una matriz 90 grados en sentido horario.
+        return [list(fila) for fila in zip(*matriz[::-1])]
 
-        Args:
-            matriz (list): Matriz (lista de listas)
-
-        Returns:
-            list: Matriz rotada 90 grados en sentido horario
-
-        Ejemplo:
-            rotar_90([[1, 2], [3, 4]]) -> [[3, 1], [4, 2]]
-            rotar_90([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
-        """
-        pass
 
     def buscar_en_matriz(self, matriz, valor):
         """
