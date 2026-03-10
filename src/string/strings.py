@@ -43,28 +43,20 @@ class Strings:
 
     
     def contar_palabras(self, texto):
-        """
-        Cuenta el número de palabras en una cadena.
-        
-        Args:
-            texto (str): Cadena para contar palabras
-            
-        Returns:
-            int: Número de palabras en la cadena
-        """
-        pass
+        palabras = texto.split()
+        return len(palabras)
+
     
     def palabras_mayus(self, texto):
-        """
-        Pon en Mayuscula la primera letra de cada palabra en una cadena.
-        
-        Args:
-            texto (str): Cadena
-            
-        Returns:
-            str: Cadena con la primera letra de cada palabra en mayúscula
-        """
-        pass
+        palabras = texto.split()
+        resultado = []
+
+        for palabra in palabras:
+            if palabra:
+                resultado.append(palabra[0].upper() + palabra[1:].lower())
+
+        return " ".join(resultado)
+
     
     def eliminar_espacios_duplicados(self, texto):
         """
