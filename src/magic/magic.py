@@ -14,77 +14,53 @@ class Magic:
 
     
     def secuencia_fibonacci(self, n):
-        """
-        Genera los primeros n números de la secuencia de Fibonacci.
-        
-        Args:
-            n (int): Cantidad de números a generar
-            
-        Returns:
-            list: Lista con los primeros n números de Fibonacci
-        """
-        pass
+        if n <= 0:
+            return []
+        secuencia = [0, 1]
+        while len(secuencia) < n:
+            secuencia.append(secuencia[-1] + secuencia[-2])
+        return secuencia[:n]
+
     
     def es_primo(self, n):
-        """
-        Verifica si un número es primo.
-        
-        Args:
-            n (int): Número a verificar
-            
-        Returns:
-            bool: True si n es primo, False en caso contrario
-        """
-        pass
+        if n < 2:
+            return False
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
     
     def generar_primos(self, n):
-        """
-        Genera una lista de números primos hasta n.
-        
-        Args:
-            n (int): Límite superior para generar primos
-            
-        Returns:
-            list: Lista de números primos hasta n
-        """
-        pass
+        primos = []
+        for i in range(2, n + 1):
+            if self.es_primo(i):
+                primos.append(i)
+        return primos
     
     def es_numero_perfecto(self, n):
-        """
-        Verifica si un número es perfecto (igual a la suma de sus divisores propios).
-        
-        Args:
-            n (int): Número a verificar
-            
-        Returns:
-            bool: True si n es un número perfecto, False en caso contrario
-        """
-        pass
+        if n < 2:
+            return False
+        suma = 1
+        for i in range(2, n // 2 + 1):
+            if n % i == 0:
+                suma += i
+        return suma == n
     
     def triangulo_pascal(self, filas):
-        """
-        Genera las primeras n filas del triángulo de Pascal.
-        
-        Args:
-            filas (int): Número de filas a generar
-            
-        Returns:
-            list: Lista de listas que representa el triángulo de Pascal
-        """
-        pass
+        triangulo = []
+        for i in range(filas):
+            fila = [1] * (i + 1)
+            for j in range(1, i):
+                fila[j] = triangulo[i - 1][j - 1] + triangulo[i - 1][j]
+            triangulo.append(fila)
+        return triangulo
     
     def factorial(self, n):
-        """
-        Calcula el factorial de un número.
+        resultado = 1
+        for i in range(2, n + 1):
+            resultado *= i
+        return resultado
         
-        Args:
-            n (int): Número para calcular su factorial
-            
-        Returns:
-            int: El factorial de n
-        """
-        pass
-    
     def mcd(self, a, b):
         """
         Calcula el máximo común divisor de dos números.
