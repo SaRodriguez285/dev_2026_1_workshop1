@@ -1,62 +1,67 @@
 import math
 
 class Stats:
-    
-    def promedio(self, numeros):
-        if len(numeros) == 0:
-            raise ValueError("La lista no puede estar vacía")
-        
-        return sum(numeros) / len(numeros)
 
-    
+    def promedio(self, numeros):
+        if not numeros:
+            return 0
+        return float(sum(numeros) / len(numeros))
+
+
     def mediana(self, numeros):
-        if len(numeros) == 0:
-            raise ValueError("La lista no puede estar vacía")
+        if not numeros:
+            return 0
 
         nums = sorted(numeros)
         n = len(nums)
         mitad = n // 2
 
         if n % 2 == 0:
-            return (nums[mitad - 1] + nums[mitad]) / 2
+            return float((nums[mitad - 1] + nums[mitad]) / 2)
         else:
-            return nums[mitad]
+            return float(nums[mitad])
 
-    
+
     def moda(self, numeros):
-        if len(numeros) == 0:
-            raise ValueError("La lista no puede estar vacía")
+        if not numeros:
+            return 0
 
         frecuencias = {}
         max_freq = 0
-        moda = numeros[0]
+        resultado = numeros[0]
 
         for num in numeros:
             frecuencias[num] = frecuencias.get(num, 0) + 1
-            
+
             if frecuencias[num] > max_freq:
                 max_freq = frecuencias[num]
-                moda = num
+                resultado = num
 
-        return moda
+        return resultado
 
-    
-    def desviacion_estandar(self, numeros):
-        return math.sqrt(self.varianza(numeros))
 
-            
     def varianza(self, numeros):
-        if len(numeros) == 0:
-            raise ValueError("La lista no puede estar vacía")
+        if not numeros:
+            return 0
 
         media = self.promedio(numeros)
-        suma = sum((x - media) ** 2 for x in numeros)
+
+        suma = 0
+        for x in numeros:
+            suma += (x - media) ** 2
 
         return suma / len(numeros)
 
-    
+
+    def desviacion_estandar(self, numeros):
+        if not numeros:
+            return 0
+
+        return math.sqrt(self.varianza(numeros))
+
+
     def rango(self, numeros):
-        if len(numeros) == 0:
-            raise ValueError("La lista no puede estar vacía")
-        
+        if not numeros:
+            return 0
+
         return max(numeros) - min(numeros)
