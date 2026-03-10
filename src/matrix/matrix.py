@@ -79,40 +79,23 @@ class Matrix:
 
 
     def diagonal(self, matriz):
-        """
-        Extrae los elementos de la diagonal principal de una matriz cuadrada.
+        if not self.es_cuadrada(matriz):
+            raise ValueError("La matriz debe ser cuadrada")
+        
+        return [matriz[i][i] for i in range(len(matriz))]
 
-        Args:
-            matriz (list): Matriz cuadrada (lista de listas)
-
-        Returns:
-            list: Lista con los elementos de la diagonal principal
-
-        Raises:
-            ValueError: Si la matriz no es cuadrada
-
-        Ejemplo:
-            diagonal([[1, 2, 3], [4, 5, 6], [7, 8, 9]]) -> [1, 5, 9]
-            diagonal([[3, 0], [0, 7]]) -> [3, 7]
-        """
-        pass
 
     def es_diagonal(self, matriz):
-        """
-        Verifica si una matriz cuadrada es diagonal
-        (todos los elementos fuera de la diagonal principal son cero).
+        if not self.es_cuadrada(matriz):
+            return False
+        
+        n = len(matriz)
+        for i in range(n):
+            for j in range(n):
+                if i != j and matriz[i][j] != 0:
+                    return False
+        return True
 
-        Args:
-            matriz (list): Matriz cuadrada (lista de listas)
-
-        Returns:
-            bool: True si la matriz es diagonal, False en caso contrario
-
-        Ejemplo:
-            es_diagonal([[3, 0], [0, 7]]) -> True
-            es_diagonal([[1, 2], [0, 4]]) -> False
-        """
-        pass
 
     def rotar_90(self, matriz):
         """
