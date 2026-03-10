@@ -21,20 +21,22 @@ class Stats:
 
     
     def moda(self, numeros):
-        """
-        Encuentra el valor que aparece con mayor frecuencia en la lista.
-        Si hay empate, retorna el primer valor encontrado.
-        
-        Args:
-            numeros (list): Lista de números
+        if len(numeros) == 0:
+            raise ValueError("La lista no puede estar vacía")
+
+        frecuencias = {}
+        max_freq = 0
+        moda = numeros[0]
+
+        for num in numeros:
+            frecuencias[num] = frecuencias.get(num, 0) + 1
             
-        Returns:
-            number: El valor más frecuente
-            
-        Ejemplo:
-            moda([1, 2, 2, 3, 3, 3]) -> 3
-        """
-        pass
+            if frecuencias[num] > max_freq:
+                max_freq = frecuencias[num]
+                moda = num
+
+        return moda
+
     
     def desviacion_estandar(self, numeros):
         """
