@@ -7,28 +7,22 @@ class Strings:
 
     
     def invertir_cadena(self, texto):
-        """
-        Invierte una cadena de texto sin usar slicing ni reversed().
-        
-        Args:
-            texto (str): Cadena a invertir
-            
-        Returns:
-            str: Cadena invertida
-        """
-        pass
+        resultado = ""
+        for char in texto:
+            resultado = char + resultado
+        return resultado
+
     
     def contar_vocales(self, texto):
-        """
-        Cuenta el número de vocales en una cadena.
-        
-        Args:
-            texto (str): Cadena para contar vocales
-            
-        Returns:
-            int: Número de vocales en la cadena
-        """
-        pass
+        vocales = "aeiouAEIOU"
+        contador = 0
+
+        for char in texto:
+            if char in vocales:
+                contador += 1
+
+        return contador
+
     
     def contar_consonantes(self, texto):
         """
