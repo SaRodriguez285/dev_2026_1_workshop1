@@ -1,5 +1,6 @@
+import math
+
 class Stats:
-    import math
     
     def promedio(self, numeros):
         if len(numeros) == 0:
