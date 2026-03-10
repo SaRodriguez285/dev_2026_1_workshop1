@@ -31,20 +31,8 @@ class Matrix:
 
 
     def multiplicar_escalar(self, matriz, escalar):
-        """
-        Multiplica cada elemento de la matriz por un escalar.
+        return [[elemento * escalar for elemento in fila] for fila in matriz]
 
-        Args:
-            matriz (list): Matriz (lista de listas)
-            escalar (number): Valor escalar por el que se multiplica
-
-        Returns:
-            list: Matriz con cada elemento multiplicado por el escalar
-
-        Ejemplo:
-            multiplicar_escalar([[1, 2], [3, 4]], 3) -> [[3, 6], [9, 12]]
-        """
-        pass
 
     def transpuesta(self, matriz):
         """
